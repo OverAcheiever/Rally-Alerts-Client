@@ -1,0 +1,39 @@
+{
+  "reset": {
+    "type": "button",
+    "label": "Test Alert",
+    "value": "Reset progress",
+    "group": "Global settings"
+  },
+  "creatorCoin": {
+    "type": "text",
+    "label": "CCoin Symbol [in Caps]",
+    "value": "SKOT",
+    "group": "CCoin Symbol"
+  },
+  "alertImage": {
+    "type": "image-input",
+    "label": "Alert Image/GIF",
+    "group": "Alerts"
+  },
+  "usernameColor": {
+    "type": "colorpicker",
+    "label": "Username Color",
+    "value": "#FFA500",
+    "group": "Alerts"
+  },
+  "messageColor": {
+    "type": "colorpicker",
+    "label": "Message Color",
+    "value": "#ffffff",
+    "group": "Alerts"
+  },
+  "textPadding": {
+    "type": "slider",
+    "label": "Image-Text Gap",
+    "value": -20,
+    "min": -50,
+    "max": 1000,
+    "step": 1
+  }
+}

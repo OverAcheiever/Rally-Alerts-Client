@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&600&display=swap');
+
+:root {
+    --scale: 2;
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.alert-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container{
+    width:  calc(150px * var(--scale));
+    height: calc(150px * var(--scale));
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    margin: -20px 0 0 -40px;
+}
+
+.img{
+    width: 100%;
+    height: 90%;
+    background-image: url({alertImage});
+    background-size: cover;
+    margin-left: 35px;
+    opacity: 0;
+}
+
+.text-container{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    line-height: calc(10px * var(--scale));
+    margin-top: calc({textPadding}px * var(--scale));
+    margin-left: calc(5px * var(--scale));
+}
+
+.username{
+    text-transform: uppercase;
+    color: {usernameColor};
+    font-size: calc(20px * var(--scale));
+    opacity: 0;
+}
+.message{
+    text-transform: uppercase;
+    font-size: calc(18px * var(--scale));
+    color: {messageColor};
+    margin-left: 0px;
+    opacity: 0;
+}
+
+.amount{
+    font-weight: 600;
+    font-family:'Poppins', sans-serif;
+}
