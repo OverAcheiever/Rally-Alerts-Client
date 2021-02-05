@@ -30,4 +30,4 @@ This widget is made by OverAchiever.
 - Discord: OverAchiever#7428
 - [Twitch](https://www.twitch.tv/overacheiever)
 
-This Project is under an MIT License. License can be found [here](https://github.com/OverAcheiever/Rally-Alerts-Client/License.md)
+This Project is under an MIT License. License can be found [here](https://github.com/OverAcheiever/Rally-Alerts-Client/blob/main/LICENSE)
