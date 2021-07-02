@@ -1,39 +1,2423 @@
 {
-  "reset": {
-    "type": "button",
-    "label": "Test Alert",
-    "value": "Reset progress",
-    "group": "Global settings"
+  "version": {
+    "type": "hidden",
+    "value": 2,
+    "group": "Emulate Alert"
   },
-  "creatorCoin": {
+  "emulateUsername": {
     "type": "text",
-    "label": "CCoin Symbol [in Caps]",
+    "label": "USERNAME",
+    "value": "MONTREAL",
+    "group": "Emulate Alert"
+  },
+  "emulateAmount": {
+    "type": "number",
+    "label": "AMOUNT",
+    "min": "1",
+    "value": "10",
+    "group": "Emulate Alert"
+  },
+  "emulateAlertType": {
+    "type": "dropdown",
+    "label": "ALERT TYPE",
+    "value": "donation",
+    "options": {
+      "donation": "Donation",
+      "purchase": "Purchase"
+    },
+    "group": "Emulate Alert"
+  },
+  "emulate": {
+    "type": "button",
+    "label": "Emulate Alert",
+    "group": "Emulate Alert"
+  },
+  "creatorCoinSymbol": {
+    "type": "text",
+    "label": "COIN SYMBOL",
     "value": "SKOT",
-    "group": "CCoin Symbol"
+    "group": "General Settings"
   },
-  "alertImage": {
-    "type": "image-input",
-    "label": "Alert Image/GIF",
-    "group": "Alerts"
+  "anonymousUsername": {
+    "type": "text",
+    "label": "DISPLAY NAME - WHEN ANONYMOUS",
+    "value": "A Rally User",
+    "group": "General Settings"
   },
-  "usernameColor": {
+  "enableDonationAlerts": {
+    "type": "dropdown",
+    "label": "ENABLE DONATION ALERTS",
+    "value": "true",
+    "options": {
+      "true": "Enable Donation Alerts",
+      "false": "Disable Donation Alerts"
+    },
+    "group": "Donation Alerts"
+  },
+  "donationAlertDuration": {
+    "type": "number",
+    "label": "ALERT DURATION [seconds]",
+    "min": 4,
+    "value": 10,
+    "group": "Donation Alerts"
+  },
+  "donationAnimation": {
+    "type": "dropdown",
+    "label": "SELECT ANIMATION",
+    "value": "stagger1",
+    "options": {
+      "fade": "Fade",
+      "stagger1": "Staggered - 1",
+      "stagger2": "Staggered (Recommended)",
+      "stagger3": "Staggered - 3"
+    },
+    "group": "Donation Alerts"
+  },
+  "donationAlertMessage": {
+    "type": "text",
+    "label": "ALERT MESSAGE",
+    "value": "{username} DONATED {usd}",
+    "group": "Donation Alerts"
+  },
+
+  "donationUsernameCapitalization": {
+    "type": "dropdown",
+    "label": "USERNAME CAPITALIZATION",
+    "value": "uppercase",
+    "options": {
+      "defualt": "Default",
+      "uppercase": "Uppercase",
+      "lowercase": "Lowercase",
+      "capitalize": "Capitalize"
+    },
+    "group": "Donation Alerts"
+  },
+
+  "donationUsernameLimit": {
+    "type": "number",
+    "label": "USERNAME CHARACTER LIMIT",
+    "min": 1,
+    "value": 15,
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationAmountDecimalLimit": {
+    "type": "number",
+    "label": "AMOUNT DECIMAL LIMIT",
+    "min": 1,
+    "value": 2,
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationTextFont": {
+    "type": "googleFont",
+    "label": "TEXT FONT",
+    "value": "Montserrat",
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationTextFontWeight": {
+    "type": "text",
+    "label": "TEXT FONT WEIGHT",
+    "value": "800",
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationTextFontSize": {
+    "type": "number",
+    "label": "TEXT FONT SIZE",
+    "value": 30,
+    "min": 1,
+    "step": 1,
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationMessageFont": {
+    "type": "googleFont",
+    "label": "MESSAGE FONT",
+    "value": "Montserrat",
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationMessageFontWeight": {
+    "type": "text",
+    "label": "MESSAGE FONT WEIGHT",
+    "value": "800",
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationMessageFontSize": {
+    "type": "number",
+    "label": "MESSAGE FONT SIZE",
+    "value": 15,
+    "min": 1,
+    "step": 1,
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationTextPaddingTop": {
+    "type": "number",
+    "label": "TEXT PADDING TOP",
+    "value": -40,
+    "min": 1,
+    "step": 1,
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationTextPaddingRight": {
+    "type": "number",
+    "label": "TEXT PADDING RIGHT",
+    "value": 0,
+    "min": 1,
+    "step": 1,
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationTextPaddingLeft": {
+    "type": "number",
+    "label": "TEXT PADDING LEFT",
+    "value": 20,
+    "min": 1,
+    "step": 1,
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationTextPaddingBottom": {
+    "type": "number",
+    "label": "TEXT PADDING BOTTOM",
+    "value": 0,
+    "min": 1,
+    "step": 1,
+    "group": "Donation Alerts - Advanced"
+  },
+  "donationDefaultShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - Default"
+  },
+  "donationDefaultTTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - Default"
+  },
+  "donationDefaultTextColor": {
     "type": "colorpicker",
-    "label": "Username Color",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - Default"
+  },
+  "donationDefaultUsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
     "value": "#FFA500",
-    "group": "Alerts"
+    "group": "Donation Variation - Default"
   },
-  "messageColor": {
+  "donationDefaultAmountColor": {
     "type": "colorpicker",
-    "label": "Message Color",
-    "value": "#ffffff",
-    "group": "Alerts"
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - Default"
   },
-  "textPadding": {
-    "type": "slider",
-    "label": "Image-Text Gap",
-    "value": -20,
-    "min": -50,
-    "max": 1000,
-    "step": 1
+  "donationDefaultMessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - Default"
+  },
+
+  "donationDefaultAlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - Default"
+  },
+  "donationDefaultSoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - Default"
+  },
+  "donationDefaultAlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - Default"
+  },
+  "donationDefaultAlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - Default"
+  },
+  "donationDefaultAlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - Default"
+  },
+  "donationVar1": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 1"
+  },
+
+  "donationVar1AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 1"
+  },
+  "donationVar1AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 1"
+  },
+  "donationVar2": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 2"
+  },
+
+  "donationVar2AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 2"
+  },
+  "donationVar2AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 2"
+  },
+  "donationVar3": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 3"
+  },
+
+  "donationVar3AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 3"
+  },
+  "donationVar3AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 3"
+  },
+  "donationVar4": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 4"
+  },
+
+  "donationVar4AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 4"
+  },
+  "donationVar4AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 4"
+  },
+  "donationVar5": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 5"
+  },
+
+  "donationVar5AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 5"
+  },
+  "donationVar5AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 5"
+  },
+  "donationVar6": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA600",
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA600",
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 6"
+  },
+
+  "donationVar6AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 6"
+  },
+  "donationVar6AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 6"
+  },
+  "donationVar7": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA700",
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA700",
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 7"
+  },
+
+  "donationVar7AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 7"
+  },
+  "donationVar7AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 7"
+  },
+  "donationVar8": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA800",
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA800",
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 8"
+  },
+
+  "donationVar8AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 8"
+  },
+  "donationVar8AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 8"
+  },
+  "donationVar9": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA900",
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA900",
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 9"
+  },
+
+  "donationVar9AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 9"
+  },
+  "donationVar9AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 9"
+  },
+  "donationVar10": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10ShowMessage": {
+    "type": "dropdown",
+    "label": "DONATION MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10TTS": {
+    "type": "dropdown",
+    "label": "TEXT-TO-SPEECH",
+    "value": "true",
+    "options": {
+      "true": "ENABLE TTS",
+      "0": "DISABLE TTS"
+    },
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA1000",
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA1000",
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Donation Variation - 10"
+  },
+
+  "donationVar10AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10SoundDuration": {
+    "type": "number",
+    "label": "SOUND DURATION",
+    "value": 2,
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Donation Variation - 10"
+  },
+  "donationVar10AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Donation Variation - 10"
+  },
+  "enablePurchaseAlerts": {
+    "type": "dropdown",
+    "label": "ENABLE PURCHASE ALERTS",
+    "value": "true",
+    "options": {
+      "true": "Enable Purchase Alerts",
+      "false": "Disable Purchase Alerts"
+    },
+    "group": "Purchase Alerts"
+  },
+  "purchaseAlertDuration": {
+    "type": "number",
+    "label": "ALERT PURCHASE [seconds]",
+    "min": 4,
+    "value": 10,
+    "group": "Purchase Alerts"
+  },
+  "purchaseAnimation": {
+    "type": "dropdown",
+    "label": "SELECT ANIMATION",
+    "value": "stagger1",
+    "options": {
+      "fade": "Fade",
+      "stagger1": "Staggered - 1",
+      "stagger2": "Staggered (Recommended)",
+      "stagger3": "Staggered - 3"
+    },
+    "group": "Purchase Alerts"
+  },
+  "purchaseAlertMessage": {
+    "type": "text",
+    "label": "ALERT MESSAGE",
+    "value": "{username} PURCHASED {cc} COINS",
+    "group": "Purchase Alerts"
+  },
+
+  "purchaseUsernameCapitalization": {
+    "type": "dropdown",
+    "label": "USERNAME CAPITALIZATION",
+    "value": "uppercase",
+    "options": {
+      "defualt": "Default",
+      "uppercase": "Uppercase",
+      "lowercase": "Lowercase",
+      "capitalize": "Capitalize"
+    },
+    "group": "Purchase Alerts"
+  },
+
+  "purchaseUsernameLimit": {
+    "type": "number",
+    "label": "USERNAME CHARACTER LIMIT",
+    "min": 1,
+    "value": 15,
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseAmountDecimalLimit": {
+    "type": "number",
+    "label": "AMOUNT DECIMAL LIMIT",
+    "min": 1,
+    "value": 2,
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseTextFont": {
+    "type": "googleFont",
+    "label": "TEXT FONT",
+    "value": "Montserrat",
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseTextFontWeight": {
+    "type": "text",
+    "label": "TEXT FONT WEIGHT",
+    "value": "800",
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseTextFontSize": {
+    "type": "number",
+    "label": "TEXT FONT SIZE",
+    "value": 30,
+    "min": 1,
+    "step": 1,
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseMessageFont": {
+    "type": "googleFont",
+    "label": "MESSAGE FONT",
+    "value": "Montserrat",
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseMessageFontWeight": {
+    "type": "text",
+    "label": "MESSAGE FONT WEIGHT",
+    "value": "800",
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseMessageFontSize": {
+    "type": "number",
+    "label": "MESSAGE FONT SIZE",
+    "value": 15,
+    "min": 1,
+    "step": 1,
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseTextPaddingTop": {
+    "type": "number",
+    "label": "TEXT PADDING TOP",
+    "value": -40,
+    "min": 1,
+    "step": 1,
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseTextPaddingRight": {
+    "type": "number",
+    "label": "TEXT PADDING RIGHT",
+    "value": 0,
+    "min": 1,
+    "step": 1,
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseTextPaddingLeft": {
+    "type": "number",
+    "label": "TEXT PADDING LEFT",
+    "value": 20,
+    "min": 1,
+    "step": 1,
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseTextPaddingBottom": {
+    "type": "number",
+    "label": "TEXT PADDING BOTTOM",
+    "value": 0,
+    "min": 1,
+    "step": 1,
+    "group": "Purchase Alerts - Advanced"
+  },
+  "purchaseDefaultShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseDefaultTextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseDefaultUsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseDefaultAmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseDefaultMessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - Default"
+  },
+
+  "purchaseDefaultAlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseDefaultSoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseDefaultAlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseDefaultAlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseDefaultAlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - Default"
+  },
+  "purchaseVar1": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 1"
+  },
+
+  "purchaseVar1AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar1AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 1"
+  },
+  "purchaseVar2": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 2"
+  },
+
+  "purchaseVar2AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar2AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 2"
+  },
+  "purchaseVar3": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 3"
+  },
+
+  "purchaseVar3AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar3AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 3"
+  },
+  "purchaseVar4": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 4"
+  },
+
+  "purchaseVar4AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar4AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 4"
+  },
+  "purchaseVar5": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA500",
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 5"
+  },
+
+  "purchaseVar5AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar5AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 5"
+  },
+  "purchaseVar6": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA600",
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA600",
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 6"
+  },
+
+  "purchaseVar6AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar6AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 6"
+  },
+  "purchaseVar7": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA700",
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA700",
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 7"
+  },
+
+  "purchaseVar7AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar7AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 7"
+  },
+  "purchaseVar8": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA800",
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA800",
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 8"
+  },
+
+  "purchaseVar8AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar8AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 8"
+  },
+  "purchaseVar9": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA900",
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA900",
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 9"
+  },
+
+  "purchaseVar9AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar9AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 9"
+  },
+  "purchaseVar10": {
+    "type": "dropdown",
+    "label": "ENABLE VARIATION",
+    "value": "false",
+    "options": {
+      "true": "Enable Variation",
+      "false": "Disable Variation"
+    },
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10ThresholdCurrencyType": {
+    "type": "dropdown",
+    "label": "THRESHOLD CURRENCY",
+    "value": "coinInUSCents",
+    "options": {
+      "amountOfCoin": "$RLY",
+      "costInUSCents": "USD"
+    },
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10Threshold": {
+    "type": "number",
+    "label": "AMOUNT >=",
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10ShowMessage": {
+    "type": "dropdown",
+    "label": "PURCHASE MESSAGE/MEMO",
+    "value": "true",
+    "options": {
+      "true": "Show Message",
+      "false": "Hide Message"
+    },
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10TextColor": {
+    "type": "colorpicker",
+    "label": "TEXT COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10UsernameColor": {
+    "type": "colorpicker",
+    "label": "USERNAME COLOR",
+    "value": "#FFA1000",
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10AmountColor": {
+    "type": "colorpicker",
+    "label": "AMOUNT COLOR",
+    "value": "#FFA1000",
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10MessageColor": {
+    "type": "colorpicker",
+    "label": "MESSAGE COLOR",
+    "value": "#fff",
+    "group": "Purchase Variation - 10"
+  },
+
+  "purchaseVar10AlertSound": {
+    "type": "sound-input",
+    "label": "ALERT SOUND",
+    "value": "https://cdn.streamelements.com/uploads/2576a94c-c390-47c9-b7dc-fa1d6b6376a5.mp3",
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10SoundDuration": {
+    "type": "number",
+    "label": "SOUND PURCHASE",
+    "value": 2,
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10AlertMediaType": {
+    "type": "dropdown",
+    "label": "MEDIA TYPE",
+    "value": "img",
+    "options": {
+      "img": "Image",
+      "video": "Video"
+    },
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10AlertImage": {
+    "type": "image-input",
+    "label": "ALERT IMAGE/GIF",
+    "value": "https://cdn.streamelements.com/uploads/b5c260dc-7b97-4b29-aecc-316b14431a51.gif",
+    "group": "Purchase Variation - 10"
+  },
+  "purchaseVar10AlertVideo": {
+    "type": "video-input",
+    "label": "ALERT VIDEO",
+    "group": "Purchase Variation - 10"
   }
 }

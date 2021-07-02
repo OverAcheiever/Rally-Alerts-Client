@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./client.css">
+    <script src='./client.js'></script>
+
 </head>
+
 <body>
-    <div class="alert-container">
-        <div class="video-container">
-            <div class='img'></div>
-        </div>
-        <div class="text-container">
-            <div class="username" id="username">OverAchiever</div>
-            <br>
-            <div class="message" id="message">Donated <span class="amount" id="amount">$50</span></div></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js" integrity="sha512-iZIBSs+gDyTH0ZhUem9eQ1t4DcEn2B9lHxfRMeGQhyNdSUz+rb+5A3ummX6DQTOIs1XK0gOteOg/LPtSo9VJ+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OverAcheiever/GSAP/SplitText.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+
+    <div class="error-container">
+        <div class="error-alert"> 
+            <div class="error-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="error-message">INVALID COIN SYMBOL</div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-    <script src='./client.js'></script>
-    <script src="./client.json"></script>
+
+    <div class="alert-container">
+        <div class="alert-media">
+            <img src="{donationDefaultAlertImage}" alt="">
+        </div>
+        <div class="text-container">
+            <div class="alert-text" id="alert-text"></div>
+            <div class="alert-message" id="alert-message"></div>
+        </div>
+    </div>
+    <video class="alert-sound" id="alert-sound"></video>
+    <button onclick=''>EMULATE</button>
 </body>
+
 </html>
